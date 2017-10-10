@@ -131,7 +131,9 @@ public abstract class KeyUtil {
   public static KeyPair generateKeyPair(String privateKeyLocation, String publicKeyLocation) {
     try {
       KeyPair clientKeyPair = generateKeyPair();
+      LOG.error("Error generating client key pair before generate");
       saveKeyPair(clientKeyPair, privateKeyLocation, publicKeyLocation);
+      LOG.error("Error generating client key pair before save");
       return clientKeyPair;
     } catch (Exception ex) {
       LOG.error("Error generating client key pair", ex);
@@ -150,7 +152,9 @@ public abstract class KeyUtil {
           OutputStream privateKeyOutput, OutputStream publicKeyOutput) {
     try {
       KeyPair clientKeyPair = generateKeyPair();
+      LOG.error("Error generating client key pair before generate");
       saveKeyPair(clientKeyPair, privateKeyOutput, publicKeyOutput);
+      LOG.error("Error generating client key pair before save");    
       return clientKeyPair;
     } catch (Exception ex) {
       LOG.error("Error generating client key pair", ex);
